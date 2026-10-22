@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Printing Filament Guide</title>
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --card: #ffffff;
+    --text: #18212b;
+    --muted: #647180;
+    --accent: #3867d6;
+    --good: #18864b;
+    --bad: #c0392b;
+    --border: #dfe4ea;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  header {
+    background: linear-gradient(135deg, #18212b, #3159a6);
+    color: white;
+    padding: 48px 20px;
+  }
+  header .wrap, main { max-width: 1100px; margin: auto; }
+  h1 { margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.2rem); }
+  header p { margin: 0; max-width: 720px; opacity: .9; font-size: 1.05rem; }
+  .toolbar {
+    max-width: 1100px;
+    margin: 24px auto 0;
+    padding: 0 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  button {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text);
+    padding: 10px 15px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 650;
+  }
+  button.active, button:hover { background: var(--accent); color: white; border-color: var(--accent); }
+  main { padding: 24px 20px 50px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 5px 18px rgba(20,30,40,.05);
+  }
+  .card.hidden { display: none; }
+  .top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+  h2 { margin: 0; font-size: 1.45rem; }
+  .badge {
+    font-size: .75rem;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #eaf0ff;
+    color: #2d57bd;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+  .description { color: var(--muted); margin: 12px 0 18px; }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .columns h3 { font-size: 1rem; margin: 0 0 8px; }
+  ul { margin: 0; padding-left: 19px; }
+  li { margin-bottom: 6px; }
+  .pros h3 { color: var(--good); }
+  .cons h3 { color: var(--bad); }
+  .specs {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: .9rem;
+  }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 20px;
+    font-size: .9rem;
+  }
+  @media (max-width: 600px) {
+    .columns { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>3D Printing Filament Guide</h1>
+    <p>Compare common FDM filaments by ease of printing, strength, heat resistance, flexibility, and typical applications.</p>
+  </div>
+</header>
+
+<div class="toolbar">
+  <button class="active" data-filter="all">All</button>
+  <button data-filter="easy">Beginner Friendly</button>
+  <button data-filter="strong">Strong</button>
+  <button data-filter="heat">Heat Resistant</button>
+  <button data-filter="flex">Flexible</button>
+</div>
+
+<main>
+  <div class="grid">
+
+    <article class="card" data-tags="easy">
+      <div class="top"><h2>PLA</h2><span class="badge">Easy</span></div>
+      <p class="description">A popular all-purpose filament and one of the easiest materials for beginners.</p>
+      <div class="columns">
+        <div class="pros"><h3>✓ Pros</h3><ul>
+          <li>Very easy to print</li><li>Low warping</li><li>Excellent detail</li><li>Inexpensive</li>
+        </ul></div>
+        <div class="cons"><h3>✕ Cons</h3><ul>
+          <li>Low heat resistance</li><li>Can be brittle</li><li>Not ideal outdoors</li>
+        </ul></div>
+      </div>
+      <div class="specs"><b>Typical uses:</b> Models, prototypes, décor, display parts</div>
+    </article>
+
+    <article class="card" data-tags="easy strong">
+      <div class="top"><h2>PETG</h2><span class="badge">Versatile</span></div>
+      <p class="description">A durable material that offers a useful middle ground between PLA and more demanding engineering plastics.</p>
+      <div class="columns">
+        <div class="pros"><h3>✓ Pros</h3><ul>
+          <li>Good strength</li><li>Better heat resistance than PLA</li><li>Good chemical resistance</li><li>Relatively easy to print</li>
+        </ul></div>
+        <div class="cons"><h3>✕ Cons</h3><ul>
+          <li>Can string</li><li>More difficult than PLA</li><li>Can have a glossy finish</li>
+        </ul></div>
+      </div>
+      <div class="specs"><b>Typical uses:</b> Functional parts, brackets, containers, outdoor items</div>
+    </article>
+
+    <article class="card" data-tags="strong heat">
+      <div class="top"><h2>ABS</h2><span class="badge">Engineering</span></div>
+      <p class="description">A tough engineering plastic with good temperature resistance, but it requires more controlled printing conditions.</p>
+      <div class="columns">
+        <div class="pros"><h3>✓ Pros</h3><ul>
+          <li>Tough and impact resistant</li><li>Good heat resistance</li><li>Can be post-processed with acetone</li>
+        </ul></div>
+        <div class="cons"><h3>✕ Cons</h3><ul>
+          <li>Significant warping</li><li>Needs good ventilation</li><li>Enclosure often recommended</li>
+        </ul></div>
+      </div>
+      <div class="specs"><b>Typical uses:</b> Housings, automotive parts, tools, durable prototypes</div>
+    </article>
+
+    <article class="card" data-tags="strong heat">
+      <div class="top"><h2>ASA</h2><span class="badge">Outdoor</span></div>
+      <p class="description">Similar to ABS but generally better suited to outdoor applications because of its UV resistance.</p>
+      <div class="columns">
+        <div class="pros"><h3>✓ Pros</h3><ul>
+          <li>Excellent UV resistance</li><li>Good heat resistance</li><li>Strong and durable</li>
+        </ul></div>
+        <div class="cons"><h3>✕ Cons</h3><ul>
+          <li>Can warp</li><li>Benefits from an enclosure</li><li>Requires ventilation</li>
+        </ul></div>
+      </div>
+      <div class="specs"><b>Typical uses:</b> Outdoor parts, automotive components, equipment housings</div>
+    </article>
+
+    <article class="card" data-tags="strong heat">
+      <div class="top"><h2>Nylon</h2><span class="badge">Tough</span></div>
+      <p class="description">A strong, wear-resistant engineering filament useful for demanding functional components.</p>
+      <div class="columns">
+        <div class="pros"><h3>✓ Pros</h3><ul>
+          <li>Excellent toughness</li><li>High wear resistance</li><li>Good fatigue resistance</li>
+        </ul></div>
+        <div class="cons"><h3>✕ Cons</h3><ul>
+          <li>Absorbs moisture quickly</li><li>Harder to print</li><li>Often needs drying</li>
+        </ul></div>
+      </div>
+      <div class="specs"><b>Typical uses:</b> Gears, hinges, mechanical parts, fixtures</div>
+    </article>
+
+    <article class="card" data-tags="flex">
+      <div class="top"><h2>TPU</h2><span class="badge">Flexible</span></div>
+      <p class="description">A flexible elastomeric filament available in different hardness levels.</p>
+      <div class="columns">
+        <div class="pros"><h3>✓ Pros</h3><ul>
+          <li>Flexible and elastic</li><li>Good impact resistance</li><li>Good abrasion resistance</li>
+        </ul></div>
+        <div class="cons"><h3>✕ Cons</h3><ul>
+          <li>Prints slowly</li><li>Can be difficult to feed</li><li>Stringing can occur</li>
+        </ul></div>
+      </div>
+      <div class="specs"><b>Typical uses:</b> Gaskets, feet, seals, phone cases, flexible mounts</div>
+    </article>
+
+    <article class="card" data-tags="strong heat">
+      <div class="top"><h2>Polycarbonate</h2><span class="badge">High Performance</span></div>
+      <p class="description">A strong, stiff engineering material with high temperature resistance.</p>
+      <div class="columns">
+        <div class="pros"><h3>✓ Pros</h3><ul>
+          <li>Very strong</li><li>High heat resistance</li><li>Excellent impact resistance</li>
+        </ul></div>
+        <div class="cons"><h3>✕ Cons</h3><ul>
+          <li>High printing temperatures</li><li>Prone to warping</li><li>Requires a capable printer</li>
+        </ul></div>
+      </div>
+      <div class="specs"><b>Typical uses:</b> Engineering parts, fixtures, high-strength components</div>
+    </article>
+
+    <article class="card" data-tags="easy">
+      <div class="top"><h2>PLA+</h2><span class="badge">Beginner</span></div>
+      <p class="description">A family of modified PLA formulations designed to improve toughness or print performance.</p>
+      <div class="columns">
+        <div class="pros"><h3>✓ Pros</h3><ul>
+          <li>Easy to print</li><li>Often tougher than standard PLA</li><li>Good surface finish</li>
+        </ul></div>
+        <div class="cons"><h3>✕ Cons</h3><ul>
+          <li>Properties vary by brand</li><li>Still limited by PLA heat resistance</li>
+        </ul></div>
+      </div>
+      <div class="specs"><b>Typical uses:</b> Prototypes, models, general-purpose parts</div>
+    </article>
+
+  </div>
+</main>
+
+<footer>
+  Filament characteristics vary by formulation, brand, printer, and print settings.
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll("button");
+  const cards = document.querySelectorAll(".card");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.dataset.filter;
+      cards.forEach(card => {
+        const show = filter === "all" || card.dataset.tags.includes(filter);
+        card.classList.toggle("hidden", !show);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
