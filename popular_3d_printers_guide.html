@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popular 3D Printers — Pros & Cons</title>
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--text:#18212b;--muted:#657384;--accent:#3867d6;--good:#18864b;--bad:#c0392b;--border:#dfe4ea}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.5}
+header{background:linear-gradient(135deg,#17202a,#3159a6);color:white;padding:48px 20px}
+.wrap,main{max-width:1120px;margin:auto}.wrap h1{font-size:clamp(2rem,5vw,3.1rem);margin:0 0 8px}.wrap p{margin:0;max-width:760px;opacity:.9}
+.toolbar{max-width:1120px;margin:24px auto 0;padding:0 20px;display:flex;gap:9px;flex-wrap:wrap}
+button{border:1px solid var(--border);background:#fff;color:var(--text);padding:10px 15px;border-radius:999px;cursor:pointer;font-weight:700}
+button.active,button:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+main{padding:24px 20px 55px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 5px 18px rgba(20,30,40,.05)}
+.card.hidden{display:none}.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+h2{margin:0;font-size:1.4rem}.brand{color:var(--muted);font-size:.85rem;margin-top:3px}
+.badge{font-size:.72rem;padding:5px 9px;border-radius:999px;background:#eaf0ff;color:#2d57bd;white-space:nowrap;font-weight:800}
+.description{color:var(--muted);margin:12px 0 18px}.columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.columns h3{font-size:1rem;margin:0 0 8px}.pros h3{color:var(--good)}.cons h3{color:var(--bad)}
+ul{margin:0;padding-left:19px}li{margin-bottom:6px}.specs{margin-top:18px;padding-top:15px;border-top:1px solid var(--border);font-size:.9rem;color:var(--muted)}
+.note{background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:20px;color:var(--muted);font-size:.92rem}
+footer{text-align:center;color:var(--muted);padding:20px;font-size:.9rem}
+@media(max-width:600px){.columns{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>Popular 3D Printers</h1>
+<p>A practical comparison of popular FDM and resin printers, with the major strengths, drawbacks, and ideal use cases for each.</p>
+</div></header>
+
+<div class="toolbar">
+<button class="active" data-filter="all">All</button>
+<button data-filter="beginner">Beginner</button>
+<button data-filter="budget">Budget</button>
+<button data-filter="enclosed">Enclosed</button>
+<button data-filter="engineering">Engineering</button>
+<button data-filter="resin">Resin</button>
+</div>
+
+<main>
+<div class="note"><b>How to use this guide:</b> No single printer is best for everyone. Consider the materials you want to print, required build size, budget, speed, repairability, and how much tinkering you enjoy.</div>
+
+<div class="grid">
+
+<article class="card" data-tags="beginner enclosed engineering">
+<div class="top"><div><h2>Bambu Lab P1S</h2><div class="brand">Bambu Lab · FDM / CoreXY</div></div><span class="badge">Best All-Around</span></div>
+<p class="description">A fast enclosed printer aimed at users who want high-quality prints with relatively little setup or calibration work.</p>
+<div class="columns"><div class="pros"><h3>✓ Pros</h3><ul><li>Excellent out-of-box experience</li><li>Fast CoreXY design</li><li>Enclosed build chamber</li><li>Good material versatility</li><li>AMS option for multi-color printing</li></ul></div>
+<div class="cons"><h3>✕ Cons</h3><ul><li>More proprietary ecosystem</li><li>Less open than Prusa-style platforms</li><li>Fans can be noticeable</li><li>Advanced materials may still benefit from a controlled environment</li></ul></div></div>
+<div class="specs"><b>Build volume:</b> 256 × 256 × 256 mm · <b>Best for:</b> General use, prototypes, functional parts</div>
+</article>
+
+<article class="card" data-tags="beginner budget">
+<div class="top"><div><h2>Bambu Lab A1</h2><div class="brand">Bambu Lab · FDM</div></div><span class="badge">Beginner Favorite</span></div>
+<p class="description">A full-size, open-frame printer with extensive automatic calibration and an easy learning curve.</p>
+<div class="columns"><div class="pros"><h3>✓ Pros</h3><ul><li>Very easy to use</li><li>Full-auto calibration</li><li>256 mm cubic build volume</li><li>Fast printing</li><li>Optional AMS Lite multi-color system</li></ul></div>
+<div class="cons"><h3>✕ Cons</h3><ul><li>Open frame limits high-temperature materials</li><li>Not ideal for ABS/ASA compared with an enclosure</li><li>Multi-color printing increases waste</li></ul></div></div>
+<div class="specs"><b>Build volume:</b> 256 × 256 × 256 mm · <b>Best for:</b> PLA, PETG, beginners, hobby projects</div>
+</article>
+
+<article class="card" data-tags="beginner enclosed engineering">
+<div class="top"><div><h2>Creality K1C</h2><div class="brand">Creality · FDM / CoreXY</div></div><span class="badge">Speed + Value</span></div>
+<p class="description">An enclosed high-speed CoreXY printer with an AI-supported camera and support for abrasive carbon-fiber materials.</p>
+<div class="columns"><div class="pros"><h3>✓ Pros</h3><ul><li>Up to 600 mm/s advertised speed</li><li>Enclosed design</li><li>Carbon-fiber filament support</li><li>AI camera monitoring</li><li>Quick-swap nozzle design</li></ul></div>
+<div class="cons"><h3>✕ Cons</h3><ul><li>Creality ecosystem can require more tinkering</li><li>Maximum speed depends heavily on model and settings</li><li>Some advanced materials still require careful tuning</li></ul></div></div>
+<div class="specs"><b>Build volume:</b> 220 × 220 × 250 mm · <b>Best for:</b> Fast printing, functional parts, CF-filled materials</div>
+</article>
+
+<article class="card" data-tags="beginner">
+<div class="top"><div><h2>Prusa MK4S</h2><div class="brand">Prusa Research · FDM</div></div><span class="badge">Repairable</span></div>
+<p class="description">A well-established open-platform printer emphasizing reliability, documentation, repairability, and long-term ownership.</p>
+<div class="columns"><div class="pros"><h3>✓ Pros</h3><ul><li>Excellent documentation</li><li>Highly repairable</li><li>Strong community support</li><li>Reliable automatic calibration</li><li>Open-source philosophy</li></ul></div>
+<div class="cons"><h3>✕ Cons</h3><ul><li>Open frame</li><li>Usually costs more than some competitors</li><li>Smaller build volume than some newer machines</li><li>Not as hands-off as some Bambu models</li></ul></div></div>
+<div class="specs"><b>Build volume:</b> 250 × 210 × 220 mm · <b>Best for:</b> Long-term ownership, education, tinkering</div>
+</article>
+
+<article class="card" data-tags="budget beginner">
+<div class="top"><div><h2>Elegoo Neptune 4 Pro</h2><div class="brand">Elegoo · FDM</div></div><span class="badge">Value</span></div>
+<p class="description">A budget-oriented high-speed FDM printer using Klipper-based control and automatic bed leveling.</p>
+<div class="columns"><div class="pros"><h3>✓ Pros</h3><ul><li>Low purchase price</li><li>Fast printing capability</li><li>Direct-drive extruder</li><li>300°C hotend</li><li>Good PLA/PETG/TPU value</li></ul></div>
+<div class="cons"><h3>✕ Cons</h3><ul><li>More hands-on than premium plug-and-play machines</li><li>Large speed claims require appropriate settings</li><li>Less polished ecosystem</li></ul></div></div>
+<div class="specs"><b>Build volume:</b> 225 × 225 × 265 mm · <b>Best for:</b> Budget buyers and people who enjoy tinkering</div>
+</article>
+
+<article class="card" data-tags="beginner budget">
+<div class="top"><div><h2>Bambu Lab A1 Mini</h2><div class="brand">Bambu Lab · FDM</div></div><span class="badge">Compact</span></div>
+<p class="description">A small, highly automated printer designed for beginners and users who do not need a large build area.</p>
+<div class="columns"><div class="pros"><h3>✓ Pros</h3><ul><li>Small footprint</li><li>Very easy setup</li><li>Automatic calibration</li><li>Fast for its size</li><li>AMS Lite option</li></ul></div>
+<div class="cons"><h3>✕ Cons</h3><ul><li>Small 180 mm build volume</li><li>Open frame</li><li>Not intended for demanding high-temperature materials</li></ul></div></div>
+<div class="specs"><b>Build volume:</b> 180 × 180 × 180 mm · <b>Best for:</b> Beginners, small models, limited workspace</div>
+</article>
+
+<article class="card" data-tags="resin">
+<div class="top"><div><h2>Elegoo Saturn 4 Ultra</h2><div class="brand">Elegoo · MSLA Resin</div></div><span class="badge">Detail</span></div>
+<p class="description">A resin printer aimed at users who prioritize fine detail, miniatures, and smooth surfaces over the simplicity of FDM.</p>
+<div class="columns"><div class="pros"><h3>✓ Pros</h3><ul><li>Very high surface detail</li><li>Excellent for miniatures</li><li>Fast resin printing</li><li>Large selection of specialty resins</li></ul></div>
+<div class="cons"><h3>✕ Cons</h3><ul><li>Resin requires careful handling</li><li>Parts require washing and curing</li><li>Consumables and cleanup add complexity</li><li>Less convenient for large functional parts</li></ul></div></div>
+<div class="specs"><b>Technology:</b> MSLA resin · <b>Best for:</b> Miniatures, figurines, highly detailed models</div>
+</article>
+
+<article class="card" data-tags="engineering enclosed">
+<div class="top"><div><h2>Creality K1 Max</h2><div class="brand">Creality · FDM / CoreXY</div></div><span class="badge">Large Format</span></div>
+<p class="description">A larger enclosed CoreXY machine for users who need more build volume while retaining high-speed printing.</p>
+<div class="columns"><div class="pros"><h3>✓ Pros</h3><ul><li>Large 300 mm cubic build volume</li><li>Enclosed chamber</li><li>High advertised speed</li><li>Useful for larger prototypes</li></ul></div>
+<div class="cons"><h3>✕ Cons</h3><ul><li>Larger footprint</li><li>More expensive than entry-level printers</li><li>Large prints can magnify warping and temperature issues</li></ul></div></div>
+<div class="specs"><b>Build volume:</b> 300 × 300 × 300 mm · <b>Best for:</b> Large models, prototypes, functional parts</div>
+</article>
+
+</div>
+</main>
+
+<footer>Specifications and capabilities can vary by firmware, accessories, filament, and print settings. Product prices change frequently.</footer>
+
+<script>
+const buttons=document.querySelectorAll("button"),cards=document.querySelectorAll(".card");
+buttons.forEach(btn=>btn.addEventListener("click",()=>{
+  buttons.forEach(b=>b.classList.remove("active")); btn.classList.add("active");
+  const f=btn.dataset.filter;
+  cards.forEach(c=>c.classList.toggle("hidden",f!=="all"&&!c.dataset.tags.includes(f)));
+}));
+</script>
+</body>
+</html>
